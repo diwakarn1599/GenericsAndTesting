@@ -16,6 +16,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
+            //initializing variables
             int num1, num2, num3, actual, expected;
             //TC 1.1
             //Arrange
@@ -26,7 +27,7 @@ namespace UnitTestProject1
             //Assert
             Assert.AreEqual(actual, expected);
 
-            //TC 1.2
+            //TestCase 1.2
             //Arrange
             num1 = 35; num2 = 45; num3 = 40;
             expected = num2;
