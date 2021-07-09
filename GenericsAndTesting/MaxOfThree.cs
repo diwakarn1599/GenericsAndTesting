@@ -7,7 +7,7 @@ namespace GenericsAndTesting
     public class MaxOfThree
     {
         //method for finding max number
-        public double MaxOfThreeNumbers(double num1, double num2, double num3)
+        public string MaxOfThreeNumbers(string num1, string num2, string num3)
         {
             if (num1.CompareTo(num2) > 0 && num1.CompareTo(num3) > 0)
             {

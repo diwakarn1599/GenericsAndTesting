@@ -17,10 +17,10 @@ namespace UnitTestProject1
         public void TestMethod1()
         {
             //initializing variables
-            double num1, num2, num3, actual, expected;
+            string num1, num2, num3, actual, expected;
             //TC 1.1
             //Arrange
-            num1 = 4.5; num2 = 3.5; num3 = 4.0;
+            num1 = "xyz"; num2 = "def"; num3 = "abc";
             expected = num1;
             //Act
             actual = maxOfThree.MaxOfThreeNumbers(num1, num2, num3);
@@ -29,7 +29,7 @@ namespace UnitTestProject1
 
             //TestCase 1.2
             //Arrange
-            num1 = 3.5; num2 = 4.5; num3 = 4.0;
+            num1 = "abc"; num2 = "xyz"; num3 = "def";
             expected = num2;
             //Act
             actual = maxOfThree.MaxOfThreeNumbers(num1, num2, num3);
@@ -38,7 +38,7 @@ namespace UnitTestProject1
 
             //Tc 1.3
             //Arrange
-            num1 = 3.5; num2 = 4.0; num3 = 4.5;
+            num1 = "def"; num2 = "abc"; num3 = "xyz";
             expected = num3;
             //Act
 
