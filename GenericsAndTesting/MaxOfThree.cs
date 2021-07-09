@@ -39,6 +39,7 @@ namespace GenericsAndTesting
         public T FindMaxOfArray()
         {
             Array.Sort(this.array);
+            Console.WriteLine($"The max element from array is {array[array.Length - 1]}");
             return array[array.Length - 1];
         }
     }
