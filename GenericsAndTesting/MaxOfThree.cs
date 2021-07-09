@@ -4,10 +4,23 @@ using System.Text;
 
 namespace GenericsAndTesting
 {
-    public class MaxOfThree
+    public class MaxOfThree<T> where T : IComparable
     {
+        public T num1, num2, num3;
+        public T[] array;
+
+        public MaxOfThree(T[] arr)
+        {
+            array = arr;
+        }
+        public MaxOfThree(T n1,T n2,T n3)
+        {
+            num1 = n1;
+            num2 = n2;
+            num3 = n3;
+        }
         //method for finding max number
-        public string MaxOfThreeNumbers(string num1, string num2, string num3)
+        public T MaxOfThreeNumbers()
         {
             if (num1.CompareTo(num2) > 0 && num1.CompareTo(num3) > 0)
             {
@@ -21,6 +34,12 @@ namespace GenericsAndTesting
             {
                 return num3;
             }
+        }
+
+        public T FindMaxOfArray()
+        {
+            Array.Sort(this.array);
+            return array[array.Length - 1];
         }
     }
 }

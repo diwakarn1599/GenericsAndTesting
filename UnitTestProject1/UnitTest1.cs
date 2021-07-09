@@ -7,45 +7,55 @@ namespace UnitTestProject1
     public class UnitTest1
     {
 
-        MaxOfThree maxOfThree;
+        MaxOfThree<int> findMaxInt;
+        MaxOfThree<string> findMaxString;
+        MaxOfThree<double> findMaxDouble;
+        MaxOfThree<int> findMaxArray;
+        int[] array = {5,4,3,2,1};
         [TestInitialize]
         public void SetUp()
         {
-            maxOfThree = new MaxOfThree();
+            //arrange
+            findMaxInt = new MaxOfThree<int>(10, 20, 30);
+            findMaxString = new MaxOfThree<string>("xyz","abc", "def");
+            findMaxDouble = new MaxOfThree<double>(1.0, 2.0, 3.0);
+            findMaxArray = new MaxOfThree<int>(array);
+
         }
         [TestMethod]
         public void TestMethod1()
         {
-            //initializing variables
-            string num1, num2, num3, actual, expected;
-            //TC 1.1
-            //Arrange
-            num1 = "xyz"; num2 = "def"; num3 = "abc";
-            expected = num1;
-            //Act
-            actual = maxOfThree.MaxOfThreeNumbers(num1, num2, num3);
-            //Assert
-            Assert.AreEqual(actual, expected);
 
-            //TestCase 1.2
+            //TC int
             //Arrange
-            num1 = "abc"; num2 = "xyz"; num3 = "def";
-            expected = num2;
+            int expectedInt = 30,actualInt;
             //Act
-            actual = maxOfThree.MaxOfThreeNumbers(num1, num2, num3);
+            actualInt = findMaxInt.MaxOfThreeNumbers();
             //Assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(actualInt, expectedInt);
+
+            //TestCase string
+            //Arrange
+            string expectedString = "xyz", actualString;
+            //Act
+            actualString = findMaxString.MaxOfThreeNumbers();
+            //Assert
+            Assert.AreEqual(actualString, expectedString);
 
             //Tc 1.3
             //Arrange
-            num1 = "def"; num2 = "abc"; num3 = "xyz";
-            expected = num3;
+            double expectedDouble = 3.0, actualDouble;
             //Act
-
-            actual = maxOfThree.MaxOfThreeNumbers(num1, num2, num3);
-
+            actualDouble = findMaxDouble.MaxOfThreeNumbers();
             //Assert
+            Assert.AreEqual(actualDouble, expectedDouble);
+
+
+            //Array
+            var actual = findMaxArray.FindMaxOfArray();
+            var expected = 5;
             Assert.AreEqual(actual, expected);
+
         }
     }
 }
